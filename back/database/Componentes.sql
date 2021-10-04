@@ -5,8 +5,13 @@ CREATE TABLE Componentes (
 	leadtime INTEGER NOT NULL,
 	minLote INTEGER NOT NULL,
 	estoqueSeguranca INTEGER NOT NULL,
-	estoqueInicial INTEGER NOT NULL
+	estoqueInicial INTEGER NOT NULL,
+	unidade varchar(100) NOT NULL
 );
+
+DELETE FROM Componentes;
+UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = 'Componentes';
+VACUUM;
 
 INSERT INTO Componentes (
 		item,
@@ -14,7 +19,8 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Lapiseira P207',
@@ -22,7 +28,8 @@ VALUES (
 		'Produzido',
 		0,
 		0,
-		0
+		0,
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -31,15 +38,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Corpo externo 207',
 		2,
 		'Produzido',
+		500,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -48,15 +57,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Presilha de bolso',
 		1,
 		'Comprado',
+		500,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -65,15 +76,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Miolo 207',
 		1,
 		'Produzido',
+		500,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -82,15 +95,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Corpo da ponteira',
 		2,
 		'Comprado',
+		500,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -99,15 +114,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Guia da ponteira',
 		1,
 		'Comprado',
+		500,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -116,15 +133,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Tampa',
 		1,
 		'Produzido',
+		500,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -133,15 +152,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Plástico ABS',
 		1,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'g'
 	);
 
 INSERT INTO Componentes (
@@ -150,15 +171,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Corante azul',
 		2,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'g'
 	);
 
 INSERT INTO Componentes (
@@ -167,15 +190,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Tira 0,1 mm',
 		1,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'g'
 	);
 
 INSERT INTO Componentes (
@@ -184,7 +209,8 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Borracha',
@@ -192,7 +218,8 @@ VALUES (
 		'Produzido',
 		0,
 		0,
-		0
+		0,
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -201,7 +228,8 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Capa da borracha',
@@ -209,7 +237,8 @@ VALUES (
 		'Produzido',
 		0,
 		0,
-		0
+		0,
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -218,7 +247,8 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Miolo interno 207',
@@ -226,7 +256,8 @@ VALUES (
 		'Produzido',
 		0,
 		0,
-		0
+		0,
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -235,15 +266,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Grafite 0,7 mm',
 		2,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -252,15 +285,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Fio de borracha',
 		1,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'cm'
 	);
 
 INSERT INTO Componentes (
@@ -269,15 +304,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Tira 0,1 mm',
 		1,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'g'
 	);
 
 INSERT INTO Componentes (
@@ -286,15 +323,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Mola',
 		1,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -303,7 +342,8 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Corpo do miolo',
@@ -311,7 +351,8 @@ VALUES (
 		'Produzido',
 		0,
 		0,
-		0
+		0,
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -320,15 +361,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Suporte da garra',
 		2,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -337,15 +380,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Capa da garra',
 		3,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -354,15 +399,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Garras',
 		1,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'qtd'
 	);
 
 INSERT INTO Componentes (
@@ -371,15 +418,17 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Plástico ABS',
 		1,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'g'
 	);
 
 INSERT INTO Componentes (
@@ -388,13 +437,15 @@ INSERT INTO Componentes (
 		formaObtencao,
 		minLote,
 		estoqueSeguranca,
-		estoqueInicial
+		estoqueInicial,
+		unidade
 	)
 VALUES (
 		'Corante preto',
 		2,
 		'Comprado',
+		50,
 		0,
 		0,
-		0
+		'g'
 	);
