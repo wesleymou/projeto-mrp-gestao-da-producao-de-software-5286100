@@ -2,19 +2,21 @@ import moment from 'moment';
 import { databaseRequest, databasePromise } from './database';
 
 const todosComponentes = async () => {
-  const query = `SELECT * FROM Events`;
+  const query = `SELECT * FROM Componentes`;
   return databasePromise(query);
 };
 
-const atualizarComponente = (event) => {
-  const { Id, Title, Date, Description, Observation } = event;
+const atualizarComponente = (componente) => {
+  const { Id, Item, Leadtime, FormaObtencao, MinLote, EstoqueSeguranca, EstoqueInicial } = componente;
   const query = `
-    UPDATE Events as e
+    UPDATE Componentes as e
       SET
-        Title = '${Title}',
-        Date = '${moment(Date).format('YYYY-MM-DD HH:mm:ss')}',
-        Description = '${Description}',
-        Observation = '${Observation}'
+        item = '${Item}',
+        leadtime = '${Leadtime}',
+        formaObtencao = '${FormaObtencao}',
+        minLote = '${MinLote}',
+        estoqueSeguranca = '${EstoqueSeguranca}',
+        estoqueInicial = '${EstoqueInicial}'
       WHERE e.Id = '${Id}'`;
 
   return databasePromise(query);
@@ -55,7 +57,7 @@ const reiniciarComponentes = async () => {
         'Corpo externo 207',
         2,
         'Produzido',
-        0,
+        500,
         0,
         0
       );
@@ -72,7 +74,7 @@ const reiniciarComponentes = async () => {
         'Presilha de bolso',
         1,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -89,7 +91,7 @@ const reiniciarComponentes = async () => {
         'Miolo 207',
         1,
         'Produzido',
-        0,
+        500,
         0,
         0
       );
@@ -106,7 +108,7 @@ const reiniciarComponentes = async () => {
         'Corpo da ponteira',
         2,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -123,7 +125,7 @@ const reiniciarComponentes = async () => {
         'Guia da ponteira',
         1,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -140,27 +142,27 @@ const reiniciarComponentes = async () => {
         'Tampa',
         1,
         'Produzido',
-        0,
+        500,
         0,
         0
       );
 
-    INSERT INTO Componentes (
-        item,
-        leadtime,
-        formaObtencao,
-        minLote,
-        estoqueSeguranca,
-        estoqueInicial
-      )
-    VALUES (
-        'Plástico ABS',
-        1,
-        'Comprado',
-        0,
-        0,
-        0
-      );
+    // INSERT INTO Componentes (
+    //     item,
+    //     leadtime,
+    //     formaObtencao,
+    //     minLote,
+    //     estoqueSeguranca,
+    //     estoqueInicial
+    //   )
+    // VALUES (
+    //     'Plástico ABS',
+    //     1,
+    //     'Comprado',
+    //     50,
+    //     0,
+    //     0
+    //   );
 
     INSERT INTO Componentes (
         item,
@@ -174,7 +176,7 @@ const reiniciarComponentes = async () => {
         'Corante azul',
         2,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -188,10 +190,10 @@ const reiniciarComponentes = async () => {
         estoqueInicial
       )
     VALUES (
-        'Tira 0,1 mm',
+        'Tira 0.1mm',
         1,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -256,10 +258,10 @@ const reiniciarComponentes = async () => {
         estoqueInicial
       )
     VALUES (
-        'Grafite 0,7 mm',
+        'Grafite 0.7mm',
         2,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -276,27 +278,27 @@ const reiniciarComponentes = async () => {
         'Fio de borracha',
         1,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
 
-    INSERT INTO Componentes (
-        item,
-        leadtime,
-        formaObtencao,
-        minLote,
-        estoqueSeguranca,
-        estoqueInicial
-      )
-    VALUES (
-        'Tira 0,1 mm',
-        1,
-        'Comprado',
-        0,
-        0,
-        0
-      );
+    // INSERT INTO Componentes (
+    //     item,
+    //     leadtime,
+    //     formaObtencao,
+    //     minLote,
+    //     estoqueSeguranca,
+    //     estoqueInicial
+    //   )
+    // VALUES (
+    //     'Tira 0.1mm',
+    //     1,
+    //     'Comprado',
+    //     50,
+    //     0,
+    //     0
+    //   );
 
     INSERT INTO Componentes (
         item,
@@ -310,7 +312,7 @@ const reiniciarComponentes = async () => {
         'Mola',
         1,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -344,7 +346,7 @@ const reiniciarComponentes = async () => {
         'Suporte da garra',
         2,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -361,7 +363,7 @@ const reiniciarComponentes = async () => {
         'Capa da garra',
         3,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -378,7 +380,7 @@ const reiniciarComponentes = async () => {
         'Garras',
         1,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -395,7 +397,7 @@ const reiniciarComponentes = async () => {
         'Plástico ABS',
         1,
         'Comprado',
-        0,
+        50,
         0,
         0
       );
@@ -412,7 +414,7 @@ const reiniciarComponentes = async () => {
         'Corante preto',
         2,
         'Comprado',
-        0,
+        50,
         0,
         0
       );

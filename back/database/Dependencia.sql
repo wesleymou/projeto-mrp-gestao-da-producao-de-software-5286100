@@ -48,7 +48,10 @@ INSERT INTO Dependencia (pai, filho, qtdReceita)
 VALUES (11, 15, 2);
 
 INSERT INTO Dependencia (pai, filho, qtdReceita)
-VALUES (12, 16, 2);
+VALUES (12, 10, 2);
+
+INSERT INTO Dependencia (pai, filho, qtdReceita)
+VALUES (13, 16, 1);
 
 INSERT INTO Dependencia (pai, filho, qtdReceita)
 VALUES (13, 17, 1);
@@ -60,13 +63,10 @@ INSERT INTO Dependencia (pai, filho, qtdReceita)
 VALUES (13, 19, 1);
 
 INSERT INTO Dependencia (pai, filho, qtdReceita)
-VALUES (13, 20, 1);
+VALUES (13, 20, 3);
 
 INSERT INTO Dependencia (pai, filho, qtdReceita)
-VALUES (13, 21, 3);
+VALUES (17, 8, 7);
 
 INSERT INTO Dependencia (pai, filho, qtdReceita)
-VALUES (18, 22, 7);
-
-INSERT INTO Dependencia (pai, filho, qtdReceita)
-VALUES (18, 23, 0.05);
+VALUES (17, 21, 0.05);

@@ -62,11 +62,11 @@ INSERT INTO Componentes (
 	)
 VALUES (
 		'Presilha de bolso',
-		1,
-		'Comprado',
-		500,
-		0,
-		0,
+        1,
+        'Comprado',
+        50,
+        0,
+        0,
 		'qtd'
 	);
 
@@ -102,7 +102,7 @@ VALUES (
 		'Corpo da ponteira',
 		2,
 		'Comprado',
-		500,
+		50,
 		0,
 		0,
 		'qtd'
@@ -121,7 +121,7 @@ VALUES (
 		'Guia da ponteira',
 		1,
 		'Comprado',
-		500,
+		50,
 		0,
 		0,
 		'qtd'
@@ -194,12 +194,12 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
-		'Tira 0,1 mm',
-		1,
-		'Comprado',
-		50,
-		0,
-		0,
+		'Tira 0.1mm',
+        1,
+        'Comprado',
+        50,
+        0,
+        0,
 		'g'
 	);
 
@@ -270,12 +270,12 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
-		'Grafite 0,7 mm',
-		2,
-		'Comprado',
-		50,
-		0,
-		0,
+		'Grafite 0.7mm',
+        2,
+        'Comprado',
+        50,
+        0,
+        0,
 		'qtd'
 	);
 
@@ -298,24 +298,24 @@ VALUES (
 		'cm'
 	);
 
-INSERT INTO Componentes (
-		item,
-		leadtime,
-		formaObtencao,
-		minLote,
-		estoqueSeguranca,
-		estoqueInicial,
-		unidade
-	)
-VALUES (
-		'Tira 0,1 mm',
-		1,
-		'Comprado',
-		50,
-		0,
-		0,
-		'g'
-	);
+-- INSERT INTO Componentes (
+-- 		item,
+-- 		leadtime,
+-- 		formaObtencao,
+-- 		minLote,
+-- 		estoqueSeguranca,
+-- 		estoqueInicial,
+-- 		unidade
+-- 	)
+-- VALUES (
+-- 		'Tira 0.1mm',
+-- 		1,
+-- 		'Comprado',
+-- 		50,
+-- 		0,
+-- 		0,
+-- 		'g'
+-- 	);
 
 INSERT INTO Componentes (
 		item,
@@ -412,24 +412,24 @@ VALUES (
 		'qtd'
 	);
 
-INSERT INTO Componentes (
-		item,
-		leadtime,
-		formaObtencao,
-		minLote,
-		estoqueSeguranca,
-		estoqueInicial,
-		unidade
-	)
-VALUES (
-		'Plástico ABS',
-		1,
-		'Comprado',
-		50,
-		0,
-		0,
-		'g'
-	);
+-- INSERT INTO Componentes (
+-- 		item,
+-- 		leadtime,
+-- 		formaObtencao,
+-- 		minLote,
+-- 		estoqueSeguranca,
+-- 		estoqueInicial,
+-- 		unidade
+-- 	)
+-- VALUES (
+-- 		'Plástico ABS',
+-- 		1,
+-- 		'Comprado',
+-- 		50,
+-- 		0,
+-- 		0,
+-- 		'g'
+-- 	);
 
 INSERT INTO Componentes (
 		item,
