@@ -1,13 +1,14 @@
 class Producao {
   demandas = [];
   estoque = [];
+  lista = [];
 
   constructor(demandas, arvore) {
     this.demandas = demandas;
 
-    const estoque = this.arvoreParaLista(arvore).reduce((acc, no) => (acc.some((n) => n.id === no.id) ? acc : [...acc, no]), []);
+    this.lista = this.arvoreParaLista(arvore).reduce((acc, no) => (acc.some((n) => n.id === no.id) ? acc : [...acc, no]), []);
 
-    estoque.forEach((componente) => {
+    this.lista.forEach((componente) => {
       this.estoque[componente.id] = [];
       for (let i = 0; i < demandas.length; i++) {
         this.estoque[componente.id][i] = {
@@ -83,6 +84,10 @@ class Producao {
   calcular() {
     return this.estoque;
   }
+
+  pegarLista() {
+    return this.lista;
+  }
 }
 
-export default Producao
+export default Producao;

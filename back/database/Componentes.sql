@@ -1,19 +1,20 @@
-CREATE TABLE Componentes (
-	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	item varchar(100) NOT NULL,
-	formaObtencao varchar(100) NOT NULL,
-	leadtime INTEGER NOT NULL,
-	minLote INTEGER NOT NULL,
-	estoqueSeguranca INTEGER NOT NULL,
-	estoqueInicial INTEGER NOT NULL,
-	unidade varchar(100) NOT NULL
-);
-
+-- CREATE TABLE Componentes (
+-- 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+-- 	item varchar(100) NOT NULL,
+-- 	formaObtencao varchar(100) NOT NULL,
+-- 	leadtime INTEGER NOT NULL,
+-- 	minLote INTEGER NOT NULL,
+-- 	estoqueSeguranca INTEGER NOT NULL,
+-- 	estoqueInicial INTEGER NOT NULL,
+-- 	unidade varchar(100) NOT NULL
+-- );
 DELETE FROM Componentes;
-UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = 'Componentes';
+UPDATE SQLITE_SEQUENCE
+SET seq = 0
+WHERE name = 'Componentes';
 VACUUM;
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -23,6 +24,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		1,
 		'Lapiseira P207',
 		1,
 		'Produzido',
@@ -31,8 +33,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -42,6 +44,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		2,
 		'Corpo externo 207',
 		2,
 		'Produzido',
@@ -50,8 +53,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -61,16 +64,17 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		3,
 		'Presilha de bolso',
-        1,
-        'Comprado',
-        50,
-        0,
-        0,
+		1,
+		'Comprado',
+		50,
+		0,
+		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -80,6 +84,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		4,
 		'Miolo 207',
 		1,
 		'Produzido',
@@ -88,8 +93,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -99,6 +104,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		5,
 		'Corpo da ponteira',
 		2,
 		'Comprado',
@@ -107,8 +113,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -118,6 +124,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		6,
 		'Guia da ponteira',
 		1,
 		'Comprado',
@@ -126,8 +133,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -137,6 +144,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		7,
 		'Tampa',
 		1,
 		'Produzido',
@@ -145,8 +153,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -156,6 +164,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		8,
 		'Plástico ABS',
 		1,
 		'Comprado',
@@ -164,8 +173,8 @@ VALUES (
 		0,
 		'g'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -175,6 +184,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		9,
 		'Corante azul',
 		2,
 		'Comprado',
@@ -183,8 +193,8 @@ VALUES (
 		0,
 		'g'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -194,16 +204,17 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		10,
 		'Tira 0.1mm',
-        1,
-        'Comprado',
-        50,
-        0,
-        0,
+		1,
+		'Comprado',
+		50,
+		0,
+		0,
 		'g'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -213,6 +224,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		11,
 		'Borracha',
 		1,
 		'Produzido',
@@ -221,8 +233,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -232,6 +244,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		12,
 		'Capa da borracha',
 		1,
 		'Produzido',
@@ -240,8 +253,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -251,6 +264,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		13,
 		'Miolo interno 207',
 		3,
 		'Produzido',
@@ -259,8 +273,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -270,16 +284,17 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		14,
 		'Grafite 0.7mm',
-        2,
-        'Comprado',
-        50,
-        0,
-        0,
+		2,
+		'Comprado',
+		50,
+		0,
+		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -289,6 +304,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		15,
 		'Fio de borracha',
 		1,
 		'Comprado',
@@ -297,27 +313,8 @@ VALUES (
 		0,
 		'cm'
 	);
-
--- INSERT INTO Componentes (
--- 		item,
--- 		leadtime,
--- 		formaObtencao,
--- 		minLote,
--- 		estoqueSeguranca,
--- 		estoqueInicial,
--- 		unidade
--- 	)
--- VALUES (
--- 		'Tira 0.1mm',
--- 		1,
--- 		'Comprado',
--- 		50,
--- 		0,
--- 		0,
--- 		'g'
--- 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -327,6 +324,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		16,
 		'Mola',
 		1,
 		'Comprado',
@@ -335,8 +333,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -346,6 +344,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		17,
 		'Corpo do miolo',
 		2,
 		'Produzido',
@@ -354,8 +353,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -365,6 +364,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		18,
 		'Suporte da garra',
 		2,
 		'Comprado',
@@ -373,8 +373,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -384,6 +384,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		19,
 		'Capa da garra',
 		3,
 		'Comprado',
@@ -392,8 +393,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -403,6 +404,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		20,
 		'Garras',
 		1,
 		'Comprado',
@@ -411,27 +413,8 @@ VALUES (
 		0,
 		'qtd'
 	);
-
--- INSERT INTO Componentes (
--- 		item,
--- 		leadtime,
--- 		formaObtencao,
--- 		minLote,
--- 		estoqueSeguranca,
--- 		estoqueInicial,
--- 		unidade
--- 	)
--- VALUES (
--- 		'Plástico ABS',
--- 		1,
--- 		'Comprado',
--- 		50,
--- 		0,
--- 		0,
--- 		'g'
--- 	);
-
 INSERT INTO Componentes (
+		id,
 		item,
 		leadtime,
 		formaObtencao,
@@ -441,6 +424,7 @@ INSERT INTO Componentes (
 		unidade
 	)
 VALUES (
+		21,
 		'Corante preto',
 		2,
 		'Comprado',
