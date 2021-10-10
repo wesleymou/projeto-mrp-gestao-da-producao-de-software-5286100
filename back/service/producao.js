@@ -12,7 +12,7 @@ class Producao {
       this.estoque[componente.id] = [];
       for (let i = 0; i < demandas.length; i++) {
         this.estoque[componente.id][i] = {
-          // ...componente,
+          ...componente,
           id: componente.id,
           nome: componente.item,
           estoqueInicial: i === 0 ? componente.estoqueInicial : undefined,
@@ -56,7 +56,7 @@ class Producao {
     const componenteDemanda = demanda * (componente.qtdReceita || 1) + componenteEstocado.necessidadesBrutas;
     const componenteDemandaSeguranca = componenteDemanda + componente.estoqueSeguranca;
     const quantidadeDisponivel = this.calcularEstoqueAtual(componente, periodo);
-    const lote = this.calcularLote(componente, componenteDemandaSeguranca);
+    const lote = this.calcularLote(componente, componenteDemandaSeguranca - quantidadeDisponivel);
 
     componenteEstocado.necessidadesBrutas = componenteDemanda;
 

@@ -33,16 +33,6 @@ const Sidebar = () => {
                 borderBottom: '1px solid gray',
               }}
             />
-
-            <li className='nav-item'>
-              <a href='pages/widgets.html' className='nav-link'>
-                <i className='nav-icon fas fa-th'></i>
-                <p>
-                  Widgets
-                  <span className='right badge badge-danger'>New</span>
-                </p>
-              </a>
-            </li>
           </ul>
         </nav>
         {/* /.sidebar-menu */}
