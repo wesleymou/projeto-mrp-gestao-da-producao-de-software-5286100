@@ -1,16 +1,24 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+// var express = require('express');
+// var path = require('path');
+// var cookieParser = require('cookie-parser');
+// var bodyParser = require('body-parser');
+// var main = require('./routes/main');
 
-var users = require('./routes/users');
+import debugF from 'debug';
+import express from 'express'
+import path from 'path'
+import cookieParser from 'cookie-parser'
+import bodyParser from 'body-parser'
+import main from './routes/main.js'
 
-var app = express();
+const debug = debugF('server');
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser())
 
-app.use('/api/v1/users', users);
+app.use('/api', main);
 
-module.exports = app;
+export default app;
+export { debug };

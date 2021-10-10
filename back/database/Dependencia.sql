@@ -5,6 +5,10 @@ CREATE TABLE Dependencia (
    qtdReceita INTEGER NOT NULL
 );
 
+DELETE FROM Dependencia;
+UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = 'Dependencia';
+VACUUM;
+    
 INSERT INTO Dependencia (pai, filho, qtdReceita)
 VALUES (1, 2, 1);
 
