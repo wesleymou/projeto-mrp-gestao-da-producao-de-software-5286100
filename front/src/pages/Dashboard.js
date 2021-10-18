@@ -8,16 +8,25 @@ const Dashboard = () => {
   const [componentes, setComponentes] = useState([]);
   const [demanda, setDemanda] = useState([200, 200, 800, 1200, 400, 1200, 1200, 200]);
   const [producao, setProducao] = useState([]);
+  const [recebimentosProgramados, setRecebimentosProgramados] = useState([[]]);
 
   useEffect(() => {
     handleCalcularProducao(demanda);
   }, []);
 
-  const handleCalcularProducao = async (demanda) => {
-    setComponentes([]);
-    setProducao([]);
+  const handleCalcularProducao = async (demanda, reload = true) => {
+    if (reload) {
+      setComponentes([]);
+      setProducao([]);
+      setRecebimentosProgramados([[]]);
+    }
+
     // @ts-ignore
-    const { lista, producao } = await calcularProducao(demanda);
+    const { lista, producao } = await calcularProducao({ demanda: demanda, recebimentosProgramados: recebimentosProgramados });
+    const aux = [[]];
+    producao.forEach((componente) => componente && (aux[componente[0].id] = componente.map((c) => c.recebimentosProgramados)));
+
+    setRecebimentosProgramados(aux);
     setComponentes(lista);
     setProducao(producao);
   };
@@ -97,8 +106,14 @@ const Dashboard = () => {
               <h4 className='m-0'>Registros básicos de cada item:</h4>
             </div>
           </div>
-          
-          <RegistroBasico producao={producao} onClick={(id) => setComponente(componentes.find((componente) => componente.id === id))} />
+
+          <RegistroBasico
+            producao={producao}
+            onClick={(id) => setComponente(componentes.find((componente) => componente.id === id))}
+            recebimentosProgramados={recebimentosProgramados}
+            setRecebimentosProgramados={setRecebimentosProgramados}
+            handleSubmit={() => handleCalcularProducao(demanda, false)}
+          />
         </div>
       </section>
     </>

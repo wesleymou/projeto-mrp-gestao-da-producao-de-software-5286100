@@ -2,9 +2,11 @@ class Producao {
   demandas = [];
   estoque = [];
   lista = [];
+  recebimentosProgramados = [];
 
-  constructor(demandas, arvore) {
+  constructor(demandas, arvore, recebimentosProgramados) {
     this.demandas = demandas;
+    this.recebimentosProgramados = recebimentosProgramados;
 
     this.lista = this.arvoreParaLista(arvore).reduce((acc, no) => (acc.some((n) => n.id === no.id) ? acc : [...acc, no]), []);
 
@@ -16,11 +18,10 @@ class Producao {
           id: componente.id,
           nome: componente.item,
           necessidadesBrutas: 0,
-          recebimentosProgramados: 0,
+          recebimentosProgramados: recebimentosProgramados[componente.id] ? +recebimentosProgramados[componente.id][i] : 0,
           estoqueProjetado: 0,
           ordemRecebimento: 0,
           ordemPlanejamento: 0,
-          // estoqueFaltante: [],
         };
       }
     });
@@ -75,11 +76,11 @@ class Producao {
           this.estoque[componente.id][periodo].ordemRecebimento = lote;
           this.estoque[componente.id][periodo - componente.leadtime].ordemPlanejamento = lote;
 
-          this.estoque[componente.id][periodo].estoqueProjetado = (quantidadeDisponivel + lote) - componenteDemandaSeguranca;
+          this.estoque[componente.id][periodo].estoqueProjetado = quantidadeDisponivel + lote - componenteDemandaSeguranca;
         } else {
           // novasDemandas[0] = lote;
 
-          this.estoque[componente.id][periodo].estoqueProjetado = (quantidadeDisponivel) - componenteDemandaSeguranca;
+          this.estoque[componente.id][periodo].estoqueProjetado = quantidadeDisponivel - componenteDemandaSeguranca;
         }
       }
     }

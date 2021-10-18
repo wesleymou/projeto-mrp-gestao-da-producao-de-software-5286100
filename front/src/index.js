@@ -4,6 +4,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Switch } from 'react-router-dom';
 import AdminLTE from 'admin-lte'
+import './styles.css'
 
 ReactDOM.render(
   <React.StrictMode>

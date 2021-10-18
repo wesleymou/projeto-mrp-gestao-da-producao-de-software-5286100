@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import arvore from './arvore.png';
 
-const RegistroBasico = ({ producao, onClick }) => {
+const RegistroBasico = ({ producao, onClick, recebimentosProgramados, setRecebimentosProgramados, handleSubmit }) => {
+  const handleRecebimentosProgramados = (id, index, value) => {
+    const recebimentosProgramadosAux = [...recebimentosProgramados];
+    recebimentosProgramadosAux[id][index] = value;
+    setRecebimentosProgramados(recebimentosProgramadosAux);
+  };
+
   return (
     <>
       <div style={{ width: '600px', position: 'fixed', right: 25, bottom: 75 }}>
@@ -55,8 +61,19 @@ const RegistroBasico = ({ producao, onClick }) => {
                     </tr>
                     <tr>
                       <th colSpan={2}>Recebimentos programados</th>
-                      {componente.map((c) => (
-                        <td style={{ width: '49px' }}>{c.recebimentosProgramados}</td>
+                      {componente.map((c, i) => (
+                        <td style={{ width: '49px', padding: 0 }}>
+                          {/* {c.recebimentosProgramados} */}
+                          <input
+                            style={{ height: 71, padding: 0, textAlign: 'center' }}
+                            type='number'
+                            className='form-control'
+                            name='qtdReceita'
+                            value={recebimentosProgramados[componente[0].id][i]}
+                            onChange={(e) => handleRecebimentosProgramados(componente[0].id, i, e.target.value)}
+                            onKeyDown={e => e.key === 'Enter' && handleSubmit()}
+                          />
+                        </td>
                       ))}
                     </tr>
                     <tr>

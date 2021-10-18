@@ -22,12 +22,12 @@ router.post('/atualizar', async (req, res, next) => {
 
 router.post('/producao', async (req, res, next) => {
   const {
-    body: { demanda },
+    body: { demanda, recebimentosProgramados },
   } = req;
 
   const dados = await pegarArvore(1);
 
-  const producao = new Producao(demanda, dados);
+  const producao = new Producao(demanda, dados, recebimentosProgramados);
 
   res.json({ producao: producao.calcular(), lista: producao.pegarLista() });
 });
