@@ -6,7 +6,7 @@ import RegistroBasico from './RegistroBasico';
 const Dashboard = () => {
   const [componente, setComponente] = useState(undefined);
   const [componentes, setComponentes] = useState([]);
-  const [demanda, setDemanda] = useState([100, 100, 100, 100, 100, 100, 100, 100]);
+  const [demanda, setDemanda] = useState([200, 200, 800, 1200, 400, 1200, 1200, 200]);
   const [producao, setProducao] = useState([]);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ const Dashboard = () => {
 
   const handleCalcularProducao = async (demanda) => {
     setComponentes([]);
+    setProducao([]);
     // @ts-ignore
     const { lista, producao } = await calcularProducao(demanda);
     setComponentes(lista);
@@ -91,36 +92,13 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* {componentes.map((componente) => (
-            <div className='row'>
-              <div className='col-lg-3 col-6'>
-                <button
-                  type='button'
-                  className='btn btn-default'
-                  data-toggle='modal'
-                  data-target='#modal-default'
-                  onClick={() => setComponente(componente)}
-                >
-                  {componente.item}
-                </button>
-              </div>
-            </div>
-          ))} */}
-
           <div className='row mb-2'>
             <div className='col-sm-6'>
               <h4 className='m-0'>Registros básicos de cada item:</h4>
             </div>
           </div>
+          
           <RegistroBasico producao={producao} onClick={(id) => setComponente(componentes.find((componente) => componente.id === id))} />
-
-          {/* {demandas.map((demanda) => (
-            <div className='row'>
-              <div className='col-lg-3 col-6'>
-                <Demanda data={demanda}/>
-              </div>
-            </div>
-          ))} */}
         </div>
       </section>
     </>

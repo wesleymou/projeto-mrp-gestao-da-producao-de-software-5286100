@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from 'react';
+import arvore from './arvore.png';
 
 const RegistroBasico = ({ producao, onClick }) => {
   return (
     <>
+      <div style={{ width: '600px', position: 'fixed', right: 25, bottom: 75 }}>
+        <img src={arvore} style={{ width: '600px' }} />
+      </div>
       {producao.map(
-        (componente) =>
+        (componente, index) =>
           componente && (
             <div className='row'>
               <div className='col-6'>
                 <div className='card card-info'>
-                  <div className='card-header' style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                  <div
+                    className='card-header'
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                      backgroundColor: Math.min(...componente.map((c) => c.estoqueProjetado)) < 0 ? 'red' : '',
+                    }}
+                  >
                     <h6>
                       <strong>Item: {componente[0].item}</strong>
                     </h6>
-                    <h6>{componente[0].minLote === 0 ? 'Lote a lote' : componente[0].minLote}</h6>
+                    <h6>{componente[0].minLote === 0 ? 'Lote a lote' : `Lote: ${componente[0].minLote}`}</h6>
                     <h6>LT: {componente[0].leadtime}</h6>
                     <h6>ES: {componente[0].estoqueSeguranca}</h6>
                     <button
@@ -31,7 +43,7 @@ const RegistroBasico = ({ producao, onClick }) => {
                     <tr>
                       <th colSpan={2}>Períodos</th>
                       {componente.map((_, i) => (
-                        <th style={{ width: '49px' }}>{i + 1}</th>
+                        <th style={{ width: '49px' }}>{i /*  + 1 */}</th>
                       ))}
                     </tr>
 
@@ -51,7 +63,7 @@ const RegistroBasico = ({ producao, onClick }) => {
                       <th>Estoque projetado</th>
                       <td style={{ width: '49px' }}>{componente[0].estoqueInicial}</td>
                       {componente.map((c) => (
-                        <td style={{ width: '49px' }}>{c.estoqueProjetado}</td>
+                        <td style={{ width: '49px', color: +c.estoqueProjetado < 0 ? 'red' : 'black' }}>{c.estoqueProjetado}</td>
                       ))}
                     </tr>
                     <tr>
@@ -68,6 +80,9 @@ const RegistroBasico = ({ producao, onClick }) => {
                     </tr>
                   </table>
                 </div>
+              </div>
+              <div className='col-6'>
+                {/* {index === producao.length - 1 && <img src={arvore} style={{ width: '600px', position: 'fixed', right: 25, bottom: 75 }} />} */}
               </div>
             </div>
           )
